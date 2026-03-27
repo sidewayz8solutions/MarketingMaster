@@ -1,0 +1,141 @@
+# Paperclip Configuration for AutoScale AI
+
+## Organization Structure
+
+```yaml
+organization:
+  name: AutoScale AI
+  description: AI Automation Agency-as-a-Service
+  founded: 2026-03-27
+
+budget:
+  monthly_operations: $500
+  marketing_spend: $1000
+  infrastructure: $200
+
+agents:
+  ceo:
+    name: Alex (CEO)
+    role: Chief Executive Officer
+    goal: Maximize client satisfaction and revenue growth
+    responsibilities:
+      - Review weekly performance metrics
+      - Generate client reports
+      - Make strategic recommendations
+      - Identify new market opportunities
+    check_interval: daily at 09:00
+
+  cto:
+    name: Sam (CTO)
+    role: Chief Technology Officer
+    goal: Ensure reliable technical infrastructure
+    responsibilities:
+      - Deploy client websites
+      - Set up databases and auth
+      - Configure integrations
+      - Monitor system health
+    check_interval: on-demand
+
+  marketing:
+    name: Maya (Marketing)
+    role: Chief Marketing Officer
+    goal: Drive client growth through content
+    responsibilities:
+      - Generate TikTok content
+      - Write X/Twitter threads
+      - Create blog content
+      - Manage posting schedules
+    check_interval: 3x daily (07:30, 16:30, 21:00)
+
+  support:
+    name: Sean (Support)
+    role: Customer Success Manager
+    goal: Ensure client satisfaction and retention
+    responsibilities:
+      - Monitor support dashboard
+      - Respond to client questions
+      - Escalate complex issues
+      - Generate support reports
+    check_interval: every 2 hours
+
+  sales:
+    name: Sara (Sales)
+    role: Chief Revenue Officer
+    goal: Acquire new clients and grow revenue
+    responsibilities:
+      - Qualify inbound leads
+      - Generate proposals
+      - Follow up on prospects
+      - Track pipeline metrics
+    check_interval: twice daily
+
+workflows:
+  client_onboarding:
+    trigger: new client signed
+    steps:
+      - cto: deploy_landing_page
+      - marketing: generate_welcome_content
+      - support: send_welcome_email
+      - ceo: schedule_kickoff_call
+
+  content_creation:
+    trigger: scheduled
+    schedule: "0 7,16,21 * * *"
+    steps:
+      - marketing: research_trends
+      - marketing: generate_slideshow
+      - marketing: add_text_overlay
+      - marketing: post_to_tiktok
+      - marketing: check_analytics
+
+  weekly_report:
+    trigger: scheduled
+    schedule: "0 9 * * 1"
+    steps:
+      - ceo: compile_metrics
+      - ceo: generate_reports
+      - ceo: send_to_clients
+      - ceo: identify_opportunities
+
+  lead_response:
+    trigger: new lead
+    steps:
+      - sales: qualify_lead
+      - sales: generate_proposal
+      - sales: schedule_call
+
+integrations:
+  skillboss:
+    enabled: true
+    use_for:
+      - website_deployment
+      - payment_processing
+      - authentication
+      - databases
+
+  larrybrain:
+    enabled: true
+    skills:
+      - larry-marketing
+      - xcellent
+      - support-dashboard
+      - content-engine
+      - email-manager
+    use_for:
+      - tiktok_automation
+      - twitter_growth
+      - support_monitoring
+      - content_generation
+
+  postiz:
+    enabled: true
+    use_for:
+      - social_media_posting
+      - analytics_tracking
+      - cross_posting
+
+  revenuecat:
+    enabled: false  # Enable per-client if they have mobile apps
+    use_for:
+      - conversion_tracking
+      - revenue_attribution

@@ -1,0 +1,28 @@
+{
+  "name": "autoscale-ai",
+  "version": "1.0.0",
+  "description": "AI Automation Agency-as-a-Service",
+  "main": "index.js",
+  "scripts": {
+    "setup": "bash scripts/setup.sh",
+    "start": "bash scripts/start-agents.sh",
+    "deploy": "bash scripts/deploy.sh",
+    "onboard": "node scripts/onboard-client.js",
+    "report": "node scripts/generate-report.js",
+    "content": "node scripts/create-content.js"
+  },
+  "dependencies": {
+    "canvas": "^2.11.2",
+    "node-fetch": "^3.3.2",
+    "dotenv": "^16.3.1"
+  },
+  "devDependencies": {},
+  "keywords": [
+    "ai-automation",
+    "marketing",
+    "social-media",
+    "agency"
+  ],
+  "author": "AutoScale AI",
+  "license": "MIT"
+}

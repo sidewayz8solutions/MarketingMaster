@@ -1,0 +1,171 @@
+organization:
+  name: Parallel Blitz
+  description: 6 Business Simultaneous Sprint
+  sprint: 7-day aggressive mode
+  goal: $1,025 revenue, 160 leads
+
+budget:
+  total_spend: $500
+  per_business: $83
+  allocation: equal  # or 'performance-based' after day 3
+
+agents:
+  biz1:
+    name: Business 1 Operator
+    business: biz-1
+    responsibilities:
+      - content_creation
+      - social_posting
+      - lead_followup
+      - metrics_tracking
+    check_interval: every 4 hours
+    priority: high
+
+  biz2:
+    name: Business 2 Operator
+    business: biz-2
+    responsibilities:
+      - content_creation
+      - social_posting
+      - lead_followup
+      - metrics_tracking
+    check_interval: every 4 hours
+    priority: high
+
+  biz3:
+    name: Business 3 Operator
+    business: biz-3
+    responsibilities:
+      - content_creation
+      - social_posting
+      - lead_followup
+      - metrics_tracking
+    check_interval: every 4 hours
+    priority: high
+
+  biz4:
+    name: Business 4 Operator
+    business: biz-4
+    responsibilities:
+      - content_creation
+      - social_posting
+      - lead_followup
+      - metrics_tracking
+    check_interval: every 4 hours
+    priority: high
+
+  biz5:
+    name: Business 5 Operator
+    business: biz-5
+    responsibilities:
+      - content_creation
+      - social_posting
+      - lead_followup
+      - metrics_tracking
+    check_interval: every 4 hours
+    priority: high
+
+  biz6:
+    name: Business 6 Operator
+    business: biz-6
+    responsibilities:
+      - content_creation
+      - social_posting
+      - lead_followup
+      - metrics_tracking
+    check_interval: every 4 hours
+    priority: high
+
+  coordinator:
+    name: Blitz Coordinator
+    role: Cross-business optimization
+    responsibilities:
+      - daily_metrics_compilation
+      - resource_reallocation
+      - winner_identification
+      - underperformer_analysis
+      - cross_learning_synthesis
+    check_interval: 3x daily (8am, 12pm, 6pm)
+
+workflows:
+  daily_sprint:
+    trigger: scheduled
+    schedule: "0 8,12,18 * * *"
+    steps:
+      - coordinator: compile_metrics
+      - coordinator: identify_winner
+      - coordinator: suggest_reallocation
+      - for_each: agents
+        do:
+          - content_creation
+          - social_posting
+          - lead_processing
+
+  content_batch:
+    trigger: scheduled
+    schedule: "0 10,14,20 * * *"
+    parallel: true
+    steps:
+      - biz1: create_3_tiktoks
+      - biz2: create_3_tiktoks
+      - biz3: create_3_tiktoks
+      - biz4: create_3_tiktoks
+      - biz5: create_3_tiktoks
+      - biz6: create_3_tiktoks
+
+  lead_nurture:
+    trigger: new_lead
+    steps:
+      - agent: send_welcome
+      - wait: 1 hour
+      - agent: send_value
+      - wait: 24 hours
+      - agent: send_offer
+      - wait: 48 hours
+      - agent: final_followup
+
+  daily_report:
+    trigger: scheduled
+    schedule: "0 22 * * *"
+    steps:
+      - coordinator: generate_report
+      - coordinator: update_dashboard
+      - coordinator: notify_commander
+
+integrations:
+  skillboss:
+    enabled: true
+    use_for:
+      - landing_pages
+      - payment_processing
+      - lead_capture
+
+  larrybrain:
+    enabled: true
+    skills:
+      - tiktok-app-marketing
+      - xcellent
+      - content-engine
+    use_for:
+      - social_media
+      - lead_generation
+
+  late:
+    enabled: true
+    use_for:
+      - content_scheduling
+      - cross_posting
+      - analytics
+
+rules:
+  reallocation:
+    condition: one_business_leads > 50
+    action: allocate_20_percent_from_lowest
+
+  double_down:
+    condition: one_business_revenue > 300
+    action: increase_content_budget_50_percent
+
+  kill_switch:
+    condition: zero_leads_for_3_days
+    action: pause_and_reallocate

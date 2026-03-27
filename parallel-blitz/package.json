@@ -1,0 +1,25 @@
+{
+  "name": "parallel-blitz",
+  "version": "1.0.0",
+  "description": "6 Business Simultaneous Sprint System",
+  "main": "index.js",
+  "scripts": {
+    "setup": "bash quick-setup.sh",
+    "start": "bash blitz-start.sh",
+    "status": "bash blitz-status.sh",
+    "report": "bash blitz-report.sh",
+    "config": "node scripts/setup-business.js",
+    "metrics": "node scripts/update-metrics.js",
+    "content": "node scripts/content-batch.js",
+    "integrate": "bash scripts/integrate-growth-engine.sh"
+  },
+  "dependencies": {},
+  "keywords": [
+    "parallel-blitz",
+    "growth-sprint",
+    "multi-business",
+    "ai-automation"
+  ],
+  "author": "sidewayz8",
+  "license": "MIT"
+}
